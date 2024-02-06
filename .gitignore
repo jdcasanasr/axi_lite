@@ -1,0 +1,9 @@
+*.bak
+quartus/*.bak
+quartus/*.json
+quartus/*.history
+quartus/*.txt
+quartus/*.flock
+quartus/dni
+quartus/output_files
+quartus/qdb
