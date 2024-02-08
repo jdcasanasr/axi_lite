@@ -23,7 +23,7 @@
 #
 # -------------------------------------------------------------------------- #
 set_global_assignment -name FAMILY "Cyclone 10 GX"
-set_global_assignment -name TOP_LEVEL_ENTITY axi_lite_dw_converter_intf
+set_global_assignment -name TOP_LEVEL_ENTITY axi_intercon_lite
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 23.4.0
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "14:54:55  FEBRERO 06, 2024"
 set_global_assignment -name LAST_QUARTUS_VERSION "23.4.0 Pro Edition"
@@ -36,6 +36,9 @@ set_global_assignment -name DEVICE 10CX220YF780I5G
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
 set_global_assignment -name POWER_APPLY_THERMAL_MARGIN ADDITIONAL
+set_global_assignment -name SOURCE_FILE ../axi_intercon_lite.svh
+set_global_assignment -name SYSTEMVERILOG_FILE ../axi_intercon_lite.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../axi_lite_join.sv
 set_global_assignment -name SYSTEMVERILOG_FILE ../spill_register_flushable.sv
 set_global_assignment -name SYSTEMVERILOG_FILE ../spill_register.sv
 set_global_assignment -name SYSTEMVERILOG_FILE ../axi_lite_dw_converter_intf.sv

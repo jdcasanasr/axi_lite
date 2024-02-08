@@ -1,13 +1,28 @@
 /// Interface wrapper for `axi_lite_dw_converter`.
 `include "axi/typedef.svh"
 `include "axi/assign.svh"
+
+/* 
+*   Daniel Casañas:
+*
+*   AXI_ADDR_WIDTH = $clog2(N_DEVICES)
+*
+*   For AXI4 to AXI4-Lite (Downsizer):
+*     AXI_SLV_PORT_DATA_WIDTH = 32'd16 (Fails if 32'd8)
+*     AXI_MST_PORT_DATA_WIDTH = 32'd32
+*
+*   For AXI4-Lite to AXI4 (Upsizer):
+*     AXI_SLV_PORT_DATA_WIDTH = 32'd32
+*     AXI_MST_PORT_DATA_WIDTH = 32'd8
+*/
+
 module axi_lite_dw_converter_intf #(
   /// AXI4-Lite address width of the ports.
   parameter int unsigned AXI_ADDR_WIDTH          = 32'd3,
   /// AXI4-Lite data width of the slave port.
-  parameter int unsigned AXI_SLV_PORT_DATA_WIDTH = 32'd16,
+  parameter int unsigned AXI_SLV_PORT_DATA_WIDTH = 32'd32,
   /// AXI4-Lite data width of the master port.
-  parameter int unsigned AXI_MST_PORT_DATA_WIDTH = 32'd32
+  parameter int unsigned AXI_MST_PORT_DATA_WIDTH = 32'd16
 ) (
   /// Clock, positive edge triggered.
   input  logic    clk_i,
